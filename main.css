@@ -5,7 +5,7 @@
 }
 body{
     font-family: 'Poppins',sans-serif;
-    color:#c9c5c5;;
+    color:#fff;
 }
 a{
     text-decoration: none;
@@ -16,10 +16,10 @@ a{
     min-height: 100vh;
     margin: 0 auto;
     display: grid;
-    grid-template-rows: 90px;
+    grid-template-rows: 111px;
     grid-template-areas: "menu"
-                         "nosotros"
                          "servicios"
+                         "nosotros"
                          "contacto"
                          "footer";
     transition: all .3s ease;
@@ -29,17 +29,14 @@ a{
 /*  ---- ---- ---- MENU ---- ---- ----*/
 .menu{
     grid-area: menu;
-    /*background: #A25742;  /* fallback for old browsers */
-    /*background: -webkit-linear-gradient(to right, #B79891,#A25742);  /* Chrome 10-25, Safari 5.1-6 */
-    /*background: linear-gradient(to right, #B79891,#A25742); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-image: url("madera.jpg");
-    background-repeat: no-repeat;
+    background:#fff;
     
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
     justify-content: space-between;
     grid-template-areas: "logo submenu";
+    opacity: 0.8;
 }
 
 .menu-logo{
@@ -48,7 +45,7 @@ a{
 }
 .menu-logo img{
     width:100%;
-    height: 80px;
+    height: 110px;
     border-radius: 10px;
 }
 .menu-items{
@@ -57,7 +54,7 @@ a{
     margin-right: 200px;
 }
 .menu-items a{
-    color:#E3E3E3;
+    color:#A55E4A;
     font-size: 18px;
     padding: 9px;
     border-radius: 10px;
@@ -67,6 +64,7 @@ a{
 
 .menu-items a:hover{
     background: #FFB121;
+    color:#fff;
 }
 
 /*  ---- ---- ----Nosotros---- ---- ----*/
@@ -75,7 +73,7 @@ a{
 
 .nosotros{
     grid-area: nosotros;
-    padding-top: 30px;
+    /*padding-top: 30px;*/
     background: #f8f1f1;
     text-align: justify;
 
@@ -91,24 +89,31 @@ a{
 
 .nosotros .nosotros-imagen img{
     width:100%;
+    height: 100%;
     display:block;/*para evitar problemas que las img generan margenes inferiores*/
-    max-width:500px;
-    border-radius: 10px;
+    max-width:632px;
+   /* border-radius: 10px;*/
     margin: 0 auto;/*para que un elemento se centre debe tener un width debe ser  en bloque y un margin auto*/
 }
 
+.nosotros .nosotros-info{
+    background: #A55E4A;
+    padding: 60px;
+}
 .nosotros .nosotros-info p{
     grid-area: info;
-    padding: 0 20px;
-    color:#c9c5c5;
+    padding-top: 15px;
+    color:#fff;
 }
 .nosotros .nosotros-info h1{
-    color:#A55E4A;
+    /*color:#A55E4A;*/
+    text-align: center;
 }
 
 .nosotros .nosotros-info hr{
     width:130px;
     margin-top: -1px;
+    margin:0 auto;
     border: 1px solid #FFB121;
 }
 
@@ -156,7 +161,7 @@ a{
 }
 
 .servicios .servicios-items figure {
-    font-size: 80px;
+    font-size: 65px;
 }
 
 .servicios .servicios-items p{
@@ -173,7 +178,6 @@ a{
 
 .contacto{
     grid-area: contacto;
-    padding-top: 30px;
     background: #f8f1f1;
     text-align: center;
     padding-bottom: 50px;
@@ -182,20 +186,9 @@ a{
 
 .contacto .contacto-datos{
     display: grid;
-    grid-template-areas: "dato1 dato2 dato3";
+    grid-template-columns: repeat(3,1fr);
     padding-top: 30px;
 }
-.contacto .contacto-datos .dato1{
-   grid-area: dato1;
-}
-
-.contacto .contacto-datos .dato2{
-    grid-area: dato2;
- }
-
- .contacto .contacto-datos .dato1{
-    grid-area: dato3;
- }
 
  .contacto .contacto-titulo{
     padding-bottom: 20px;
@@ -219,13 +212,29 @@ a{
 
 .footer{
     grid-area: footer;
-    padding:50px;
-    background-image: url("madera.jpg");
+    padding:40px;
+    background:#3B3A3A;
     background-repeat: no-repeat;
     text-align: center;
 }
 
+@media screen and (max-width: 576px){
 
+    .nosotros{
+        grid-template-columns: 1fr;
+        grid-template-areas:"imagen"
+                            "info";
+        padding-bottom: 50px;
+    }
+
+    .nosotros .nosotros-imagen img{
+       min-width: 800px;
+    }
+
+    .contacto .contacto-datos{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
 
 
 
